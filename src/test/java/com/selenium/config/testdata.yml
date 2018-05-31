@@ -1,0 +1,105 @@
+# Test data required for test execution
+
+default_tenant_admin_username: admin
+default_tenant: d
+default_tenant_admin_password: admin
+
+#Manage Tenants - Add Tenant
+confluence : false
+tenant_id: tenant
+admin_user_id: admin
+tenant_name: tenant
+tenant_description: tenant description information
+maximum_concurrent_users: default
+admin_user_email_address: qateam@frevvo.com
+search_task_tenant_id: tenant_search
+search_task_employee1_user: employee1
+search_icon_tenant_id: tenant_icon
+search_icon_employee1_user: employee1
+second_admin_user_name : admin2
+second_admin_first_name : admin2_first name
+second_admin_last_name : admin2_last name
+second_admin_email : qateam@frevvo.com
+
+admin_user_password: a
+renter_admin_user_password: a
+second_admin_password : a
+user_password: a
+
+#Roles : Mapping between users and roles is like this <ROLE_NAME>_user1, <ROLE_NAME>_user2
+#For LDAP just modify this part
+roles:
+# hr : HR
+# manager : Manager
+# employee: employee
+ employee: employee
+ manager: manager
+ hr: hr
+
+ldap:
+ admin_user_password: FrevvoTest00
+ renter_admin_user_password: FrevvoTest00
+ connection_url: ldap://10.35.34.106:389
+ connection_user: FREVVO\Administrator
+ connection_password: intel@123
+ users_base: CN=Users,DC=frevvo,DC=com
+ groups_base: CN=Users,DC=frevvo,DC=com
+ all_groups_filter: (objectClass=group)
+ all_users_filter: (objectClass=user)
+ tls: true
+ ignore_case: true
+ notify: true
+ user_id_display: sAMAccountName
+ group_id_display: sAMAccountName
+ user_member_of: memberOf
+ group_member: member
+ first_name: givenName
+ last_name: sn
+ email: mail
+ manager: manager
+
+#Users
+users:
+ employee_user1: employee1
+ employee_user2: employee2
+ manager_user1: manager1
+ manager_user2: manager2
+ hr_user1: hr1
+ hr_user2: hr2
+ designer_user1: designer
+ designer_user2: designer2
+user_email: "qateam@frevvo.com"
+
+#ACL
+role_name: manager
+user_name: manager2
+
+#Email Verification
+email_id: qateam@frevvo.com
+email_password: qaqaqa
+
+anonymous_user: Anonymous
+
+#Services URL
+service_url: 'http://app.frevvo.com/services/testyanf'
+invalid_service_url: 'http://abc'
+service_url_with_space: "http://app.frevvo.com/services/testhttp?content=Mistakes Happen&sleep=3"
+web_page_url: "intranet.gslab.com"
+web_page_url_contents: "Enter search text:"
+web_page_url_title: "Home | Intranet"
+activity_doc_action_url: "http://10.71.71.12:8082/services/testhttp?status=422&content=foo"
+activity_doc_action_url_local: "/services/testyanf"
+#Flow Doc Actions
+flow_doc_actions:
+ to_list: "qateam@frevvo.com;vikas.sanap@gslab.com"
+ from_list: "qateam@frevvo.com"
+ cc_list: "vikas.sanap@gslab.com;deepika.mohanty@gslab.com"
+ bcc_list: "deepika.mohanty@gslab.com;vikas.sanap@gslab.com"
+ reply_to_list: "qateam@frevvo.com;deepika.mohanty@gslab.com"
+
+#Google Connector
+google:
+ valid_email: "qateam@frevvo.com"
+ valid_token: "OAuth21/S9M8NRVrSomsIoGjvPPPaTfD0_1pyeWTdR5BKWECJn990RDknAdJa_sgfheVM0XT"
+ origin_ss_id: "1QHPoOSVBBoVq4QMgyRUkD2KEfgsWN0EHi_TAezojz-s"
+ ss_parent_id: "0BxZs2Vgv6J85RTEzZEszS3lkU3M"
